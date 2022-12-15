@@ -1,0 +1,46 @@
+{% load static %}
+<html>
+    
+    <head>
+        <link rel="stylesheet" href="{% static 'css/style.css'  %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        
+    </head>
+<body>
+<!--Navbar-->
+{% include "navBar.html" %}
+<!--Fin Navbar-->
+<div class="container">
+    <div class="row">
+      <div class="col-sm-4 ">
+<div style="margin-top:200px ;"><h4>Diplomes et formations</h4></div>
+        </div>
+    <div class="col-sm-6 " style="margin: 150px 0 0 150px;">
+        
+        <section id="resume" class="resume">
+            <div class="container">
+                
+                        
+            {% for f in form %}
+            
+         <div class="resume-item"> 
+          <h4>{{f.speci}}</h4>
+          <h5>{{f.date }}</h5>
+          <p>{{f.lieu}}</p>
+          <p>{{f.type}}</p>
+        </div>
+          {% endfor %}
+       
+                  
+                </div>
+            
+        </section>
+
+    <br>
+    <br>
+        
+    
+    </div>
+
+</body>
+</html>

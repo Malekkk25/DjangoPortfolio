@@ -1,0 +1,39 @@
+<!--Navbar-->
+<Navbar>
+    <nav class="navbar navbar-expand-sm navbar-light bg-warning">
+    <a class="navbar-brand" href="{% url 'list_form' %}">Ayed Malek </a>
+    <div class="collapse navbar-collapse"> 
+        {% if request.user.is_authenticated %}
+
+     <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+     <a class="nav-link" href="{% url 'list_form' %}">Diplomes et formations</a>
+    </li>
+    <li class="nav-item">
+     <a class="nav-link" href="{% url 'list_type' %}">Types de formations</a>
+    </li> 
+    <li class="nav-item">
+     <a class="nav-link" href="/admin">Addministration</a>
+    </li>
+    {% endif %}
+     </ul>
+     {% if request.user.is_authenticated %}
+    <ul class="navbar-nav ml-auto" >
+        <li class="nav-item">
+         <a class="nav-link" href="#">[{{ request.session.username }}]</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'disconnect' %}">Déconnexion</a>
+        </li>
+    </ul>
+    {% else %}  
+    <ul class="navbar-nav ml-auto" >
+        <li class="nav-item">
+         <a class="nav-link" href="{% url 'connect' %}">Connexion</a>
+        </li>
+        {% endif %}
+         </ul>
+         
+    </div>
+     </nav>
+    <!--Fin Navbar-->    

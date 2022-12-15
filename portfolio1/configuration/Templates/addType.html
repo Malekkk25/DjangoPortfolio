@@ -1,0 +1,26 @@
+{% load static %}
+<html>
+<head>
+<title>Ajout Type </title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+ </head>
+<body>
+{% include "navBar1.html" %}
+<br>
+<h1><center>Ajouter Type </center></h1>
+<br>
+<center>
+<form action="add_type_action/" method="post">
+{% csrf_token %}
+<div class="col-sm-4 col-md-6 col-lg-4" >
+<label>Type</label>
+<input name="type" class="form-control"></td>
+</div>
+<div class="col-sm-4 col-md-6 col-lg-4">
+<br><input type="submit" value="Ajouter" class="btn btn-success">
+</div>
+</form>
+</center>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% load static %}
+<html>
+<head>
+<title>Connexion</title>
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+{% include "navBar1.html" %}
+<br>
+<div class="container">
+<div class="card mb-6"> 
+<div class="card-body" style="align-items:'center';"> 
+<h1>Connexion</h1> 
+<div class="col-sm-4 col-md-6 col-lg-4" >
+<form action="login/" method="post">
+{% csrf_token %}
+login :                  <input name="login" ><br>
+Password :               <input type="password" name="mot2pass" id="mot2pass">
+<br>
+<br><input type="submit" value="Se connecter" class="btn btn-success">
+</div>
+</div> 
+
+</form>
+</div> 
+</div>
+</div>
+</div>
+</body>
+</html>

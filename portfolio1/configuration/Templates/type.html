@@ -1,0 +1,48 @@
+
+<html>
+    {% load static %} 
+    <head> 
+<link rel="stylesheet" href="{% static 'css/style.css'  %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    <!--Navbar-->
+{% include "navBar1.html" %}
+<!--Fin Navbar-->
+<br>
+<div class="container">
+<div class="card mb-6"> 
+<div class="card-body">
+    <h1>Diplômes et formations</h1>
+    <p align="right">
+        <a href="addType/" class="btn btn-primary">Ajouter </a>
+        </p>
+        <center>
+    <table border="1">
+        <thead>
+        <tr>
+        
+        <td>Type</td>
+        <td>Modifier</td>
+        <td>supprimer</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for t in type reversed %}
+        <tr>
+        <td>{{ t.nomType }}</td>
+        
+    <td><a href="update_type/{{ t.id }}"><img height="32" src="{% static 'img/edit.png' %}"></a></td>
+    <td><a onclick="return confirm('Etes-vous sure de vouloir supprimer ce  Type?')" href="del_type/{{ t.id }}"> <img height="32" width="32" src="{% static 'img/delete.jfif' %}">  </a></td>
+    </tr>
+    {% endfor %}
+
+</div>
+</div>
+</div>
+ </tbody> 
+ </table>
+</center>
+</body>
+</html>
+       

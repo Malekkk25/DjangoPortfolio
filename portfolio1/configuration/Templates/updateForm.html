@@ -1,0 +1,52 @@
+
+<html>
+    {% load static %}
+<head>
+<title>Modification des diplômes / formations </title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+ </head>
+<body>
+{% include "navBar1.html" %}
+<br>
+<h1><center>Modifier </center></h1>
+<br>
+
+<center>
+<form action="update_form_action/{{ form.id }}" method="post">
+{% csrf_token %}
+<div class="col-sm-4 col-md-6 col-lg-4" >
+<label>Spécification</label>
+<input name="speci" value="{{ form.speci }}" class="form-control"></td>
+</div>
+<div class="col-sm-4 col-md-6 col-lg-4">
+<label>Lieu </label>
+<input name="lieu" value="{{ form.lieu  }}" 
+class="form-control">
+</div>
+<div class="col-sm-4 col-md-6 col-lg-4">
+<label>Date </label>
+<input  name="date" value="{{ form.date }}" 
+class="form-control">
+</div>
+
+<div class="col-sm-4 col-md-6 col-lg-4">
+<label> Type </label>
+<select name="type" class="form-control form-control-lg">
+< !-- ajoutez dans balise option les noms des catégories -->
+<option value="{{form.type_id}}">{{form.type.nomType}}</option>
+
+{% for t in type  %}
+{% if t.id != form.type_id %}
+<option value="{{t.id}}">{{t.nomType}}</option>
+{% endif %}
+{% endfor %}
+
+</select> 
+</div><div class="col-sm-4 col-md-6 col-lg-4">
+<br><input type="submit" value="Modifier" class="btn btn-success">
+</div>
+</form>
+</center>
+</body>
+</html>

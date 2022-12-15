@@ -1,0 +1,56 @@
+
+<html>
+    {% load static %} 
+    <head> 
+<link rel="stylesheet" href="{% static 'css/style.css'  %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+</head>
+<body>
+    <!--Navbar-->
+{% include "navBar1.html" %}
+<!--Fin Navbar-->
+<br>
+<div class="container">
+<div class="card mb-6"> 
+<div class="card-body">
+    <h1>Diplômes et formations</h1>
+    <p align="right">
+        <a href="addForm/" class="btn btn-primary">Ajouter </a>
+        </p>
+    <table border="1">
+        <thead>
+        <tr>
+        
+        <td>Spécification</td>
+        <td>Lieu</td>
+        <td>Date</td>
+        <td>Type</td>
+        <td>Modifier</td>
+        <td>supprimer</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for f in form reversed %}
+        <tr>
+        <td>{{ f.speci }}</td>
+        <td>{{ f.lieu }}</td>
+        <td>{{ f.date }}</td>
+        {% for t in type %}
+        {% if f.type_id == t.id %}
+        <td>{{t.nomType}}</td>
+        {% endif %}
+        {% endfor %}
+ <td><a href="update_form/{{ f.id }}"><img height="32" src="{% static 'img/edit.png' %}"></a></td>
+ <td><a onclick="return confirm('Etes-vous sure de vouloir supprimer cet  Formation?')" href="del_form/{{ f.id }}"> <img height="32" width="32" src="{% static 'img/delete.jfif' %}">  </a></td>
+ </tr>
+ {% endfor %}
+
+</div>
+</div>
+</div>
+ </tbody> 
+ </table>
+</body>
+</html>
+       

@@ -1,0 +1,47 @@
+
+<html>
+    {% load static %}
+    <head>
+        <link rel="stylesheet" href="{% static 'css/style.css'  %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        
+    </head>
+
+    <body>
+         <!--Navbar-->
+        {% include "navBar.html" %}
+         <!--Fin Navbar-->
+         <div class="container">
+            <div class="row">
+              <div class="col-sm-6 ">
+                <br>
+        <div style="margin:100px 0 0 98px;"> <img  width="70%" style="border-radius: 100px;"  src="{% static 'img/IMG-20211218-WA0014.jpg' %}" /></div>
+        </div>
+        <div class="col-sm-6 " style="margin-top: 150px;" >
+         
+            <h1> Salut</h1><br>
+            <h3>A propos de moi</h3><br>
+            {{ description }}<br><br>
+          
+        
+        </div>
+            </div>
+         </div>
+         <br>
+         <br>
+         <hr>
+         <div class="row" style="margin-left:100px ;">
+            <div class="col-3"><h6>Telephone</h6>
+            {{telephone}}
+        </div>
+            <div class="col-3"><h6>E-mail</h6>
+            {{mail}}</div>
+            <div class="col-3"><h6>Adresse</h6>
+            {{adresse}}</div>
+            <div class="col-3"><h6>Date de naissance</h6> 
+                {{datedenaissance}}</div>
+               
+            </div>
+            
+    </body>
+</html>
