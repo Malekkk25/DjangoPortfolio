@@ -1,4 +1,5 @@
-#Django
+# Django
+
 I have created my first Django project, which includes the administration section, a complete CRUD functionality, and my CV section
 ![image](https://github.com/Malekkk25/DjangoPortfolio/assets/98125803/1fd5cc68-b4ca-4124-b762-55cd1040ffed)
 ![image](https://github.com/Malekkk25/DjangoPortfolio/assets/98125803/c25e2513-daf4-42ae-bca1-bca9ff1ec158)
